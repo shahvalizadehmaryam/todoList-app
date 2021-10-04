@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
 import TodoListCompleted from "./todoListCompleted";
+import style from "./completedTodo.module.css";
 
 const CompletedTodo = () => {
   const todos = useTodos();
@@ -34,7 +35,7 @@ const CompletedTodo = () => {
   return (
     <div>
       <h3>Completed Todo</h3>
-      <form onSubmit={completedTodoSubmitHandler}>
+      <form onSubmit={completedTodoSubmitHandler} className={style.form}>
         <input
           type="text"
           placeholder="Add New Todo"

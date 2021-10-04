@@ -1,4 +1,5 @@
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
+import style from "./todo.module.css";
 
 const Todo = ({ todo }) => {
   const todos = useTodos();
@@ -10,7 +11,7 @@ const Todo = ({ todo }) => {
   //   todosDispatch({ type: "SEND_TO_PENDING_PART", payload: todo.id });
   // }
   return (
-    <div>
+    <div className={style.todoItem}>
       <p>{todo.title}</p>
       <button onClick={sendToCompletedPart}>completed</button>
       {/* <button onClick={sendToPendingPart}>pending</button> */}

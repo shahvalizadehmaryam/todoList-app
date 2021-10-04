@@ -1,4 +1,5 @@
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
+import style from "./todoCompleted.module.css";
 
 const TodoCompleted = ({ todo }) => {
   const todos = useTodos();
@@ -11,6 +12,7 @@ const TodoCompleted = ({ todo }) => {
   };
   return (
     <div>
+   
       <p>{todo.title}</p>
       <button onClick={pendingBtnHandler}>Pending</button>
       <button onClick={completedBtnHandler}>UnCompleted</button>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
 import TodoList from "../TodoList/todoList";
+import style from "./allTodo.module.css";
 
 const AllTodo = () => {
   const [todo, setTodo] = useState({
@@ -33,7 +34,7 @@ const AllTodo = () => {
   return (
     <div>
       <h3>All Todo</h3>
-      <form onSubmit={allTodoSubmitHandler}>
+      <form onSubmit={allTodoSubmitHandler} className={style.form}>
         <input
           type="text"
           placeholder="Add New Todo"
