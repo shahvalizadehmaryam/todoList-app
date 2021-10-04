@@ -32,7 +32,7 @@ const AllTodo = () => {
     });
   };
   return (
-    <div>
+    <div className={style.formPart}>
       <h3>All Todo</h3>
       <form onSubmit={allTodoSubmitHandler} className={style.form}>
         <input

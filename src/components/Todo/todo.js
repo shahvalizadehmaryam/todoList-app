@@ -7,14 +7,14 @@ const Todo = ({ todo }) => {
   const sendToCompletedPart = () => {
     todosDispatch({ type: "SEND_TO_COMPLETED_PART", payload: todo.id });
   };
-  // const sendToPendingPart = () => {
-  //   todosDispatch({ type: "SEND_TO_PENDING_PART", payload: todo.id });
-  // }
+  const sendToPendingPart = () => {
+    todosDispatch({ type: "SEND_TO_PENDING_PART", payload: todo.id });
+  };
   return (
     <div className={style.todoItem}>
       <p>{todo.title}</p>
       <button onClick={sendToCompletedPart}>completed</button>
-      {/* <button onClick={sendToPendingPart}>pending</button> */}
+      <button onClick={sendToPendingPart}>pending</button>
     </div>
   );
 };

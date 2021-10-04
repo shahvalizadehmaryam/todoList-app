@@ -1,7 +1,7 @@
 import TodoProvider, { useTodos } from "../../provider/todoProvider";
 import AllTodo from "../AllTodo/allTodo";
 import CompletedTodo from "../CompletedTodo/completedTodo";
-// import Pending from "../PendingTodo/pending";
+import Pending from "../PendingTodo/pending";
 import style from "./todoApp.module.css";
 
 const TodoApp = () => {
@@ -9,7 +9,7 @@ const TodoApp = () => {
     <div className={style.main}>
       <TodoProvider>
         <AllTodo />
-        {/* <Pending /> */}
+        <Pending />
         <CompletedTodo />
       </TodoProvider>
     </div>

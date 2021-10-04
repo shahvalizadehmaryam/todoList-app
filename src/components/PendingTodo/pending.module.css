@@ -1,0 +1,17 @@
+.form input {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    outline: none;
+    border-radius: 5px;
+    width: 300px;
+  }
+  .form button {
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+  }
+  .formPart {
+    margin-top: 20px;
+  }
+  

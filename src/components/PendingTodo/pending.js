@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
-import TodoListCompleted from "./todoListCompleted";
-import style from "./completedTodo.module.css";
+import PendingTodoList from "./pendingTodoList";
+import style from "./pending.module.css";
 
-const CompletedTodo = () => {
+const Pending = () => {
   const todos = useTodos();
   const todosDispatch = useTodosAction();
   console.log(todos, "completedtodo.js");
@@ -11,21 +11,21 @@ const CompletedTodo = () => {
     id: 0,
     title: "",
     category: {
-      todo: true,
+      todo: false,
       completed: false,
-      pending: false,
+      pending: true,
     },
   });
-  const completedTodoChangeHandler = (e) => {
+  const pendingTodoChangeHandler = (e) => {
     setTodo({
       ...todo,
       id: Math.floor(Math.random() * 1000),
       title: e.target.value,
     });
   };
-  const completedTodoSubmitHandler = (e) => {
+  const pendingTodoSubmitHandler = (e) => {
     e.preventDefault();
-    todosDispatch({ type: "ADD_COMPLETED_TODO", payload: todo });
+    todosDispatch({ type: "ADD_PENDING_TODO", payload: todo });
     setTodo({
       ...todo,
       id: 0,
@@ -34,20 +34,19 @@ const CompletedTodo = () => {
   };
   return (
     <div className={style.formPart}>
-      <h3>Completed Todo</h3>
-      <form onSubmit={completedTodoSubmitHandler} className={style.form}>
+      <h3>pending Todo</h3>
+      <form onSubmit={pendingTodoSubmitHandler} className={style.form}>
         <input
           type="text"
           placeholder="Add New Todo"
-          required
-          onChange={completedTodoChangeHandler}
           value={todo.title}
+          onChange={pendingTodoChangeHandler}
         />
-        <button type="submit">Add</button>
+        <button>Add</button>
       </form>
-      <TodoListCompleted />
+      <PendingTodoList />
     </div>
   );
 };
 
-export default CompletedTodo;
+export default Pending;
