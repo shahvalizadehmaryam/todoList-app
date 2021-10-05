@@ -1,5 +1,55 @@
 .todoItem {
-  border: 1px solid #ccc;
-  border-radius: 15px;
+  border: 1px solid #be42a9;
+  border-radius: 8px;
   margin: 15px 20px;
+}
+.todoItemBtnPart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todoItemBtnPart button {
+  margin: 5px;
+  padding: 3px 8px;
+}
+.btn {
+  border-radius: 3px;
+  border: 1px solid;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.checkBtn {
+  border-color: #059669;
+  color: #059669;
+}
+.checkBtn:hover {
+  background-color: #059669;
+  color: #efefef;
+}
+.pendingBtn {
+  border-color: #d97706;
+  color: #d97706;
+}
+.pendingBtn:hover {
+  background-color: #d97706;
+  color: #efefef;
+}
+.editBtn {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.editBtn:hover {
+  background-color: #2563eb;
+  color: #efefef;
+}
+.deleteBtn {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+.deleteBtn:hover {
+  background-color: #dc2626;
+  color: #efefef;
 }

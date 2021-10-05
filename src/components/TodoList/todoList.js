@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
 import Todo from "../Todo/todo";
 import style from "./todoList.module.css";

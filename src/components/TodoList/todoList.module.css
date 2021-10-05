@@ -4,6 +4,9 @@
   border-radius: 10px;
   height: 400px;
 }
+.todoList h3 {
+  color: #be42a9;
+}
 .title {
   border-bottom: 1px solid;
   margin: 0px 20px;

@@ -1,17 +1,20 @@
 .form input {
-    border: 1px solid #ccc;
-    padding: 10px 12px;
-    outline: none;
-    border-radius: 5px;
-    width: 300px;
-  }
-  .form button {
-    padding: 10px;
-    background: black;
-    color: white;
-    border: none;
-  }
-  .formPart {
-    margin-top: 20px;
-  }
-  
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  outline: none;
+  border-radius: 5px;
+  width: 300px;
+}
+.form button {
+  padding: 10px;
+  background: #d97706;
+  color: white;
+  border: none;
+}
+.formPart {
+  margin-top: 20px;
+}
+.formPart h3 {
+  color: #d97706;
+  margin: 20px 0;
+}

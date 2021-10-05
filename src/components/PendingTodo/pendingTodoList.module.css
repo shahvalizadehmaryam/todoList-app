@@ -1,12 +1,14 @@
 .todoList {
-    margin-top: 20px;
-    background-color: white;
-    border-radius: 10px;
-    height: 400px;
-  }
-  .title {
-    border-bottom: 1px solid;
-    margin: 0px 20px;
-    padding: 10px 12px;
-  }
-  
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 10px;
+  height: 400px;
+}
+.todoList h3 {
+  color: #d97706;
+}
+.title {
+  border-bottom: 1px solid;
+  margin: 0px 20px;
+  padding: 10px 12px;
+}

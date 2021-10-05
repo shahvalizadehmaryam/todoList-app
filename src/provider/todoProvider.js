@@ -154,7 +154,73 @@ const todosReducer = (state, action) => {
         pendingList: updatePendingList,
       };
     }
-
+    case "DELETE_FROM_TODOLIST":
+      const newTodoList = state.updatedTodoList.filter(
+        (todo) => todo.id !== action.payload
+      );
+      return {
+        ...state,
+        updatedTodoList: newTodoList,
+      };
+    case "DELETE_FROM_COMPLETEDLIST":
+      const newCompletedList = state.completedList.filter(
+        (todo) => todo.id !== action.payload
+      );
+      return {
+        ...state,
+        completedList: newCompletedList,
+      };
+    // case "EDIT_TODOLIS_ITEM":
+    //   const index = todos.findIndex((todo) => todo.id === id);
+    //   const selectedTodo = { ...todos[index] };
+    //   selectedTodo.text = newVal;
+    //   const updatedTodos = [...todos];
+    //   updatedTodos[index] = selectedTodo;
+    //   setTodos(updatedTodos);
+    //   const obj = state.updatedTodoList.filter((t) => t.d === action.payload);
+    //   const todoTitleValue = obj.title;
+    //   return {
+    //     ...state,
+    //     editTodo: todoTitleValue,
+    //   };
+    case "EDIT_TODOITEM":
+      const index = state.updatedTodoList.findIndex(
+        (todo) => todo.id === action.payload.id
+      );
+      const selectedTodo = { ...state.updatedTodoList[index] };
+      selectedTodo.title = action.payload.value;
+      const updatedTodoList = [...state.updatedTodoList];
+      updatedTodoList[index] = selectedTodo;
+      return {
+        ...state,
+        updatedTodoList: updatedTodoList,
+      };
+    case "EDIT_PENDING_TODOITEM": {
+      const index = state.pendingList.findIndex(
+        (todo) => todo.id === action.payload.id
+      );
+      const selectedTodo = { ...state.pendingList[index] };
+      selectedTodo.title = action.payload.value;
+      const updatedPendingList = [...state.pendingList];
+      updatedPendingList[index] = selectedTodo;
+      return {
+        ...state,
+        pendingList: updatedPendingList,
+      };
+    }
+    case "EDIT_COMPLETED_TODOITEM": {
+      const index = state.completedList.findIndex(
+        (todo) => todo.id === action.payload.id
+      );
+      const selectedTodo = { ...state.completedList[index] };
+      selectedTodo.title = action.payload.value;
+      const updatedCompletedList = [...state.completedList];
+      updatedCompletedList[index] = selectedTodo;
+      return {
+        ...state,
+        completedList: updatedCompletedList,
+      };
+    }
     default:
       return state;
   }

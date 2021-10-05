@@ -1,0 +1,16 @@
+.form {
+  margin: 10px 0;
+}
+.form input {
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  outline: none;
+  border-radius: 5px;
+  width: 150px;
+}
+.form button {
+  padding: 5px;
+  background: #2563eb;
+  color: white;
+  border: none;
+}

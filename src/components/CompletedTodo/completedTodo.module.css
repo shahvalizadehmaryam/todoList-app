@@ -7,10 +7,14 @@
 }
 .form button {
   padding: 10px;
-  background: black;
+  background: #059669;
   color: white;
   border: none;
 }
 .formPart {
   margin-top: 20px;
+}
+.formPart h3 {
+  margin: 20px 0;
+  color: #059669;
 }
