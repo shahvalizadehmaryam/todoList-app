@@ -7,6 +7,7 @@ import style from "./todoApp.module.css";
 const TodoApp = () => {
   return (
     <div className={style.main}>
+     
       <TodoProvider>
         <AllTodo />
         <Pending />

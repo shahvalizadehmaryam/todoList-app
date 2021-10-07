@@ -1,36 +1,37 @@
-import { useTodosAction } from "../../provider/todoProvider";
-import style from "./pendingTodo.module.css";
+import { useTodos, useTodosAction } from "../../../provider/todoProvider";
+import style from "./todoCompleted.module.css";
 import { FaCheck } from "react-icons/fa";
 import { FaHourglassHalf } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { useState } from "react";
-import EditTodo from "./editTodo";
+import EditTodo from "../EditTodo/editTodo";
 
-
-const PendingTodo = ({ todo }) => {
+const TodoCompleted = ({ todo }) => {
   const [isShow, setIsShow] = useState(false);
+  const todos = useTodos();
   const todosDispatch = useTodosAction();
-  const pendingBtnHandler = () => {
-    todosDispatch({ type: "SENDBACK_FROM_PENDING_TO_TODO", payload: todo.id });
-  };
   const completedBtnHandler = () => {
-    todosDispatch({
-      type: "SEND_FROM_PENDING_TO_Complete",
-      payload: todo.id,
-    });
+    todosDispatch({ type: "SENDBACK_TO_TODO_PART", payload: todo.id });
+  };
+  const pendingBtnHandler = () => {
+    todosDispatch({ type: "SEND_FROM_COMPLETED_TO_PENDING", payload: todo.id });
+  };
+  const deleteTodoHandler = () => {
+    todosDispatch({ type: "DELETE_FROM_COMPLETEDLIST", payload: todo.id });
   };
   const editTodoHandler = () => {
     setIsShow((prevState) => !prevState);
   };
   return (
     <div className={style.todoItem}>
-
-
       {isShow && <EditTodo todo={todo} />}
       <p>{todo.title}</p>
       <div className={style.todoItemBtnPart}>
-        <button className={`${style.btn} ${style.deleteBtn}`}>
+        <button
+          className={`${style.btn} ${style.deleteBtn}`}
+          onClick={deleteTodoHandler}
+        >
           <FaTrashAlt />
         </button>
         <button
@@ -56,4 +57,4 @@ const PendingTodo = ({ todo }) => {
   );
 };
 
-export default PendingTodo;
+export default TodoCompleted;

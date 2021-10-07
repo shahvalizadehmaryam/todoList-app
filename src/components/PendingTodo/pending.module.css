@@ -6,15 +6,43 @@
   width: 300px;
 }
 .form button {
+  border-radius: 5px;
   padding: 10px;
   background: #d97706;
   color: white;
   border: none;
 }
+.form button:hover {
+  cursor: pointer;
+  border: 1px solid #d97706;
+  background: white;
+  color: #d97706;
+}
 .formPart {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 .formPart h3 {
   color: #d97706;
   margin: 20px 0;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .form {
+    align-items: center;
+    flex-direction: column;
+  }
+  .formPart {
+    padding: 10px;
+  }
+
+  .form button {
+    margin-top: 15px;
+    width: 300px;
+  }
 }

@@ -10,6 +10,13 @@
   background: #be42a9;
   color: white;
   border: none;
+  border-radius: 5px;
+}
+.form button:hover {
+  cursor: pointer;
+  border: 1px solid #be42a9;
+  background: white;
+  color: #be42a9;
 }
 .formPart {
   margin-top: 20px;
@@ -17,4 +24,23 @@
 .formPart h3 {
   margin: 20px 0;
   color: #be42a9;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .form {
+    align-items: center;
+    flex-direction: column;
+  }
+  .formPart {
+    padding: 10px;
+  }
+  .form button {
+    margin-top: 15px;
+    width: 300px;
+  }
 }

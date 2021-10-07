@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTodos, useTodosAction } from "../../provider/todoProvider";
+import { useTodos, useTodosAction } from "../../../provider/todoProvider";
 import style from "./editTodo.module.css";
 
 const EditTodo = ({ todo }) => {

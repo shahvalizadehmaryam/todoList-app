@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
-import TodoListCompleted from "./todoListCompleted";
+import TodoListCompleted from "./TodoList/todoListCompleted";
 import style from "./completedTodo.module.css";
 
 const CompletedTodo = () => {

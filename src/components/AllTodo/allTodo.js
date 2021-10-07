@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useTodos, useTodosAction } from "../../provider/todoProvider";
-import TodoList from "../TodoList/todoList";
+import { useTodosAction } from "../../provider/todoProvider";
+import TodoList from "../AllTodo/TodoList/todoList";
 import style from "./allTodo.module.css";
 
 const AllTodo = () => {
@@ -13,7 +13,6 @@ const AllTodo = () => {
       pending: false,
     },
   });
-  const todos = useTodos();
   const todosDispatch = useTodosAction();
   const todoChangeHandler = (e) => {
     setTodo({

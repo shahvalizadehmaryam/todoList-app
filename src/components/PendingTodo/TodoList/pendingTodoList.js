@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useTodos, useTodosAction } from "../../provider/todoProvider";
-import PendingTodo from "./pendingTodo";
+import { useTodos, useTodosAction } from "../../../provider/todoProvider";
+import PendingTodo from "../Todo/pendingTodo";
 import style from "./pendingTodoList.module.css";
 
 const PendingTodoList = () => {
@@ -9,8 +9,9 @@ const PendingTodoList = () => {
   return (
     <div className={style.todoList}>
       <h3 className={style.title}>PENDING</h3>
-      {todos.pendingList &&
-        todos.pendingList.map((t) => <PendingTodo key={t.id} todo={t} />)}
+      {todos.pendingList.length
+        ? todos.pendingList.map((t) => <PendingTodo key={t.id} todo={t} />)
+        : "No Item Add Yet!"}
     </div>
   );
 };

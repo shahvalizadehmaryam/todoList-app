@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTodos, useTodosAction } from "../../provider/todoProvider";
-import PendingTodoList from "./pendingTodoList";
+import PendingTodoList from "./TodoList/pendingTodoList";
 import style from "./pending.module.css";
 
 const Pending = () => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTodos, useTodosAction } from "../../provider/todoProvider";
+import { useTodos, useTodosAction } from "../../../provider/todoProvider";
 import style from "./editTodo.module.css";
 
 const EditTodo = ({ todo }) => {
@@ -12,7 +12,7 @@ const EditTodo = ({ todo }) => {
   const editSubmitHandler = (e) => {
     e.preventDefault();
     todosDispatch({
-      type: "EDIT_COMPLETED_TODOITEM",
+      type: "EDIT_PENDING_TODOITEM",
       payload: { id: todo.id, value: inputVal },
     });
   };

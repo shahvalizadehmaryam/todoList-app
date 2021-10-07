@@ -170,19 +170,16 @@ const todosReducer = (state, action) => {
         ...state,
         completedList: newCompletedList,
       };
-    // case "EDIT_TODOLIS_ITEM":
-    //   const index = todos.findIndex((todo) => todo.id === id);
-    //   const selectedTodo = { ...todos[index] };
-    //   selectedTodo.text = newVal;
-    //   const updatedTodos = [...todos];
-    //   updatedTodos[index] = selectedTodo;
-    //   setTodos(updatedTodos);
-    //   const obj = state.updatedTodoList.filter((t) => t.d === action.payload);
-    //   const todoTitleValue = obj.title;
-    //   return {
-    //     ...state,
-    //     editTodo: todoTitleValue,
-    //   };
+    case "DELETE_FROM_PENDINGLIST": {
+      const newPendingList = state.pendingList.filter(
+        (todo) => todo.id !== action.payload
+      );
+      return {
+        ...state,
+        pendingList: newPendingList,
+      };
+    }
+
     case "EDIT_TODOITEM":
       const index = state.updatedTodoList.findIndex(
         (todo) => todo.id === action.payload.id

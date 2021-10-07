@@ -1,4 +1,4 @@
-import { useTodos, useTodosAction } from "../../provider/todoProvider";
+import {  useTodosAction } from "../../../provider/todoProvider";
 import style from "./todo.module.css";
 import { FaCheck } from "react-icons/fa";
 import { FaHourglassHalf } from "react-icons/fa";
@@ -9,7 +9,6 @@ import EditTodo from "../EditTodo/editTodo";
 
 const Todo = ({ todo }) => {
   const [isShow, setIsShow] = useState(false);
-  const todos = useTodos();
   const todosDispatch = useTodosAction();
   const sendToCompletedPart = () => {
     todosDispatch({ type: "SEND_TO_COMPLETED_PART", payload: todo.id });
